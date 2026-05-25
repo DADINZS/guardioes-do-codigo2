@@ -1,22 +1,22 @@
-name: Phyton Tests
+name: python tests
 on:
-  push: 
+  push:
     branches:
-  -main
-   jobs:
-   testes:
+    -main
+jobs:
+  testes:
       runs-on: ubuntu-latest
-   steps:
+  steps:
 
--name: Baixar código
-uses: actions/checkout@v4
--name: Instalar Python
-uses: actions/setup-python@v5
+  -name: baixar codigo
+  uses: actions/checkout@v4
+  -name: instalar python
+  uses: actions/setup-python@v5
      with:
-        python-version: '3.11'
+      python-version: '3.11'
 
--name: Instalar pytest
-run: pip install pytest
--name: Executar testes
-run: pytest
+  -name: instalar pytest
+  run: pip install pytest
+  -name: executar testes
+  run: pytest
   
