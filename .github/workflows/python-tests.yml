@@ -1,4 +1,4 @@
-name: python tests
+name: Python Tests
 
 on:
   push:
@@ -8,19 +8,19 @@ on:
 jobs:
   testes:
       runs-on: ubuntu-latest
- steps:
+      
+steps:
+ - name: Baixar codigo
+   uses: actions/checkout@v4
   
-- name: baixar codigo
-  uses: actions/checkout@v4
-  
-- name: Instalar Python
-  uses: actions/setup-python@v5
-  with:
+ - name: Instalar Python
+   uses: actions/setup-python@v5
+   with:
       python-version: '3.11'
 
-- name: instalar pytest
-  run: pip install pytest
+ - name: Instalar pytest
+   run: pip install pytest
   
-- name: executar testes
-  run: pytest
+ - name: Executar testes
+   run: pytest
   
